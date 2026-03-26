@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Existing styles preserved above, modern converter styles added below */
+
+body {
+    background-color: #15142b;
+    background-image: linear-gradient(180deg, #372991, #15142b);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0;
+}
+
+main {
+    max-width: 400px;
+    width: 100%;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.flag {
+    font-size: 2.5rem;
+}
+
+.arrow {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #372991;
+}
+
+h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    color: #2c1e5a;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-family: 'DM Mono', monospace;
+    text-align: center;
+    color: #6b5e8e;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #2c1e5a;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.input-wrap {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.prefix {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b5e8e;
+    font-weight: 700;
+    font-size: 1.1rem;
+    pointer-events: none;
+    z-index: 1;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 1.25rem 1.25rem 1.25rem 3rem;
+    border: 2px solid #e1d9ff;
+    border-radius: 16px;
+    font-size: 1.4rem;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #372991;
+    box-shadow: 0 8px 25px rgba(55, 41, 145, 0.2);
+    background: white;
+    transform: translateY(-1px);
+}
+
+button {
+    width: 100%;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #372991 0%, #291f6c 100%);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(55, 41, 145, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(55, 41, 145, 0.4);
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.resultado {
+    margin-top: 2.5rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(55, 41, 145, 0.1), rgba(41, 31, 108, 0.1));
+    border-radius: 20px;
+    border: 2px dashed #372991;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem 0;
+}
+
+.label {
+    font-weight: 600;
+    color: #2c1e5a;
+    font-size: 1.1rem;
+}
+
+.valor {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.valor.brl {
+    color: #28a745;
+    text-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.valor.usd {
+    color: #007bff;
+    text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+}
+
+.divisor {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #372991;
+    margin: 1.5rem 0;
+    font-family: 'Syne', sans-serif;
+}
+
+.linha.destaque {
+    background: rgba(55, 41, 145, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.cotacao-info {
+    font-size: 0.95rem;
+    color: #6b5e8e;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    background: rgba(107, 94, 142, 0.1);
+    padding: 0.75rem;
+    border-radius: 8px;
+}
+
+button[type="reset"] {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    margin-top: 1.5rem;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+button[type="reset"]:hover {
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.4);
+}
+
+/* Preserve all existing rules below - compatibility */
+header, main, section, article {
+    max-width: 700px;
+}
+
+header > h1 {
+    color: white;
+    text-shadow: 3px 3px 0px black;
+}
+
+main, section, article {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.502);
+}
+
+footer {
+    display: block;
+    width: 100vw;
+    background-color: #291f6c;
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    padding: 5px;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.5em;
+}
+
+h2, h3, h4 {
+    color: #372991;
+    margin: 0 0 10px 0;
+}
+
+a {
+    color: #15142b;
+    background-color: rgba(55, 41, 145, 0.1);
+    padding: 0 3px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: .5px dotted #372991;
+}
+
+a:hover {
+    color: #372991;
+    border-bottom: 1px solid #372991;
+}
+
+table {
+    min-width: 400px;
+    border-spacing: 0px;
+    border: 0.5px solid #372991;
+    margin: 10px auto;
+}
+
+table th {
+    background-color: #372991;
+    color: white;
+    padding: 5px;
+    text-align: left;
+}
+
+table td {
+    padding: 5px;
+}
+
+table tr {
+    background-color: rgba(55, 41, 145, 0.05);
+}
+
+table tr:nth-child(odd) {
+    background-color: rgba(55, 41, 145, 0.3);
+}
+
+table.divisao {
+    border: 1px solid white;
+}
+
+table.divisao td {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+table.divisao  tr:nth-child(1) td:nth-child(2) {
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+}
+
+table.divisao tr:nth-child(2) td:nth-child(2) {
+    border-left: 3px solid black;
+}
+
+table.divisao tr:nth-child(2) td:nth-child(1) {
+    text-decoration: underline;
+}
+
+ul > li::marker {
+    color: #372991;
+}
+
+form {
+    background-color: rgba(55, 41, 145, 0.05);
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+input[type=text], [type=number], select, input[type=date], input[type=date], input[type=datetime], input[type=email], input[type=month], input[type=password], input[type=range], input[type=tel], input[type=time], input[type=week] {
+    border-radius: 12px;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+input[type=reset] {
+    background-color: #eb9903;
+}
+
+input[type=reset]:hover {
+    background-color: #c27013;
+}
+
+input[type=button], button {
+    background-color: #372991;
+}
+
+input[type=button]:hover, button:hover {
+    background-color: #291f6c;
+}
+
+fieldset {
+    border: 0.5px dotted #372991;
+}
+
+fieldset > legend {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+input[type=radio] + label, input[type=checkbox] + label {
+    display: inline-block;
+    font-size: 1em;
+}
+
+.btn {
+    background-color: #372991;
+}
+
+.btn:hover {
+    background-color: #291f6c;
+}
